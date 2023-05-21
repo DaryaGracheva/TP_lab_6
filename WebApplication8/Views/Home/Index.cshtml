@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Оформление посылки";
+}
+
+<h2>Оформление посылки</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <table>
+            <tr>
+                <td>@Html.Label("Дата заказа:")</td>
+                <td>@Html.TextBox("Дата")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Откуда:")</td>
+                <td>@Html.TextBox("Откуда")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Куда:")</td>
+                <td>@Html.TextBox("Куда")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Способ доставки:")</td>
+                <td>@Html.DropDownList("Способ_доставки", new SelectList(new[] { "обычный", "ускоренный", "курьером" }))</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Вес посылки (кг):")</td>
+                <td>@Html.TextBox("Вес")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Посылка ценная?")</td>
+                <td>@Html.CheckBox("Yes or No", false)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Ценность посылки (руб):")</td>
+                <td>@Html.TextBox("Ценность")</td>
+            </tr>
+
+        </table>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <button id="calculateButton" type="submit" name="action" value="Submit"> Подтвердить</button>
+    </div>
+
+}
+
